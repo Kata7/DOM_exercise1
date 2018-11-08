@@ -5,21 +5,26 @@ document.addEventListener('DOMContentLoaded', function () {
       { name: 'Lead', number: 82, symbol: 'Pb' },
       { name: 'Bismuth', number: 83, symbol: 'Bi' },
       { name: 'Neon', number: 10, symbol: 'Ne' }
-    ]
+    ];
     
-    // create var for insertion location
     var table = document.getElementById('table');
-    
-    // Iterate through elements array
-    for (var i = 0; i < elements.length; i++) {
-    
-        // assigning temp vars for element properties
-        var name = elements[i].name;
-        var num = elements[i].number;
-        var sym = elements[i].symbol;
-    
-          table.createElement('th');
-      
+
+    for (var i = 0; i < elements.length; i++){
+
+        var row =  table.insertRow();
+        var cell1 = row.insertCell();
+        var cell2 = row.insertCell();
+        var cell3 = row.insertCell();
+
+        var element = elements[i];
+        var name = element.name;
+        var number = element.number;
+        var symbol = element.symbol;
+
+        cell1.innerHTML = `${number}`;
+        cell2.innerHTML = `${symbol}`;
+        cell3.innerHTML = `${name}`;
+
     }
     
   })
